@@ -1,9 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
-import dotenv from 'dotenv';
-dotenv.config();
 
-const app = express();
+export const app = express();
 
 //  ----------------------------------------------------------------
 //  ----------------    MIDDLEWARE
@@ -31,8 +29,4 @@ app.use((error: Error, req: any, res: any, next: any) => {
             message: error.message,
         },
     });
-});
-
-app.listen(process.env.PORT || 3000, () => {
-    console.log('Server is running on port http://localhost:3000');
 });

@@ -7,7 +7,7 @@
   },
   "description": "",
   "scripts": {
-    "start": "cross-env NODE_ENV=development nodemon --config nodemon.json src/app.ts",
+    "start": "cross-env NODE_ENV=development nodemon --config nodemon.json src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Symon Kurt San Jose",
