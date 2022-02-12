@@ -1,31 +1,28 @@
-import express from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 import morgan from 'morgan';
+import helmet from 'helmet';
+import { routes } from './routes/routes';
 
 export const app = express();
 
 //  ----------------------------------------------------------------
 //  ----------------    MIDDLEWARE
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
+app.use(helmet());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //  ----------------------------------------------------------------
 //  ----------------   ROUTES
-app.get('/misc/alive', (req, res) => {
-    res.status(200).json({ message: 'Hello there!' });
-    return res.send();
-});
+app.use('/api', routes);
 
 //  ----------------------------------------------------------------
 //  ----------------   ERROR HANDLING REQUESTS
-app.use((req, res, next) => {
+app.use((req: Request, res: Response, next: NextFunction) => {
     const error = new Error("Not found");
     next(error);
-});
-
-app.use((error: Error, req: any, res: any, next: any) => {
-    res.status(500);
-    res.json({
+}, (error: Error, req: Request, res: Response, next: NextFunction) => {
+    res.status(404).json({
         error: {
             message: error.message,
         },
