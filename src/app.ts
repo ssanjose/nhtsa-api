@@ -11,8 +11,9 @@ app.use(express.json());
 
 //  ----------------------------------------------------------------
 //  ----------------   ROUTES
-app.get('/', (req, res) => {
-    return res.send('Hello World!');
+app.get('/misc/alive', (req, res) => {
+    res.status(200).json({ message: 'Hello there!' });
+    return res.send();
 });
 
 //  ----------------------------------------------------------------
