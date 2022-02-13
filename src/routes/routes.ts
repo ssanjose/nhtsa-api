@@ -1,14 +1,9 @@
-import express, { Request, Response } from 'express';
+import express, { Router } from 'express';
+import { v1Routes } from './api/v1/v1.routes';
 export const routes = express.Router();
 
-routes.get('/test', (req: Request, res: Response) => {
-    res.status(200).json({
-        message: req.query['hello']
-    });
-});
-routes.get('/alive', (req: Request, res: Response) => {
-    res.status(200).json({
-        success: true,
-        message: 'Hello there!'
-    });
-});
+const setRoutes = (app: Router) => {
+    app.use('/v1', v1Routes);
+}
+
+setRoutes(routes);
