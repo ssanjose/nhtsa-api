@@ -8,7 +8,7 @@
   "description": "",
   "scripts": {
     "start": "cross-env NODE_ENV=development nodemon --config nodemon.json src/index.ts",
-    "test": "cross-env NODE_ENV=test ts-mocha test/**/*.ts"
+    "test": "cross-env-shell NODE_ENV=test ts-mocha test/$npm_config_api/**/*.ts"
   },
   "author": "Symon Kurt San Jose",
   "license": "MIT",
