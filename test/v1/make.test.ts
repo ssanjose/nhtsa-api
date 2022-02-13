@@ -5,13 +5,14 @@ import { server } from '../../src/index';
 const should = chai.should();
 chai.use(chaiHttp);
 
-describe('Miscellaneous', () => {
-    describe('ping server /api/v1/ping', () => {
-        it('should return a 200 response', (done) => {
+describe('Make Test', () => {
+    describe('Get all makes', () => {
+        it('should return a 200 response and list of makes', (done) => {
             chai.request(server)
-                .get('/api/v1/ping')
+                .get('/api/v1/getMakes')
                 .end((err: Error, res) => {
                     res.should.have.status(200);
+                    res.body.should.be.a('object');
                     done();
                 });
         });
