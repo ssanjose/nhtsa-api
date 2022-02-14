@@ -2,7 +2,9 @@
 
 A Backend API to retrieve vehicle information such as make, model, and year created, and relays that data to the user.
 
-This API contains uses TypeScript and an Express Server to deliver its contents. The server is composed of different versions of API `/api/v1/path`...`api/v2/path` and caches the make, model, and VIN data fetched from the external NHTSA API (https://vpic.nhtsa.dot.gov/api/) every 10 minutes.
+This API uses TypeScript and an Express Server to deliver its contents. The server is composed of different versions of API `/api/v1/path`...`api/v2/path` and fetches the make, model, and VIN data from the external NHTSA API (https://vpic.nhtsa.dot.gov/api/).
+
+The API follows the Model-Service-Controller pattern and the routing is set on routes.ts for the api. The tests can be found on the each directory inside test folder.
 
 Download and use this application at using `git clone https://github.com/ssanjose/nhtsa-api.git`
 
@@ -12,7 +14,7 @@ API is separated to different versions: v1...vn. You can change the api version 
 
 ## URIs include
 
-- /api/v*/alive
+- /api/v*/ping
 - /api/v*/make
 - /api/v*/model?make=...&year=...
 - /api/v*/model?VIN=...
