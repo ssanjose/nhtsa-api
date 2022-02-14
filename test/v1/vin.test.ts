@@ -8,8 +8,10 @@ chai.use(chaiHttp);
 describe('VIN Test', () => {
     describe('Get single model', () => {
         it('given a VIN', (done) => {
+            // Sample vin
             const VIN = '3N1AB6AP7BL729215';
-            const details: string[][] = [['Model_Year', '2011'], ['Make_Name', 'Nissan'], ['Model_Name', 'Sentra']]
+            // Actual model
+            const details: string[][] = [['modelYear', '2011'], ['make', 'NISSAN'], ['model', 'Sentra']]
 
             chai.request(server)
                 .get(`/api/v1/model?vin=${VIN}`)
@@ -17,17 +19,19 @@ describe('VIN Test', () => {
                     res.should.have.status(200);
 
                     let pass: boolean = true;
+                    let key: string;
+                    let value: string;
+
                     // Loop through each detail and check if it is in the response body.
-                    for (const detail of details) {
-                        const key = detail[0];
-                        const value = detail[1];
-                        if (res.body[key] !== value) {
+                    for (let i = 0; i < details.length; i++) {
+                        key = details[i][0];
+                        value = details[i][1];
+                        if (res.body["model"][key] !== value) {
                             pass = false;
                             break;
                         }
                     }
 
-                    console.log(res.body);
                     pass.should.be.true;
                     done();
                 });
