@@ -6,7 +6,8 @@ This API uses TypeScript and an Express Server to deliver its contents. The serv
 
 The API follows the Model-Service-Controller pattern and the routing is set on routes.ts for the api. The tests can be found on the each directory inside test folder.
 
-Download and use this application at using `git clone https://github.com/ssanjose/nhtsa-api.git`
+See the API at 
+Or download and use this application at `git clone https://github.com/ssanjose/nhtsa-api.git`
 
 ## API
 
@@ -20,7 +21,7 @@ API is separated to different versions: v1...vn. You can change the api version 
 - /api/v*/model?VIN=...
 
 ## Scripts
-### `npm start`
+### `npm run dev`
 
 Starts the server
 
