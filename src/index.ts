@@ -4,9 +4,9 @@ import { app } from './app';
 import http from 'http';
 
 // Configuration and setting up the server
-const port = process.env.NODE_ENV === "development" || "test" ? 3000 : 8080;
+let port = ["development", "test"].includes(`${process.env.NODE_ENV}`) ? 3000 : 8080;
 export const server = http.createServer(app);
 
-server.listen(port, () => {
-    console.log(`Server is running on port http://localhost:${port}`);
+server.listen(process.env.PORT || port, () => {
+    console.log(`Server is running on port http://localhost:${process.env.PORT || port}`);
 });
