@@ -1,7 +1,7 @@
 export interface Model {
-    name: string;
-    make: string;
-    model: string;
-    year: number;
-    VIN: string;
+    Make_ID?: number;
+    Model_ID?: number;
+    Make_Name: string;
+    Model_Name: string;
+    Model_Year: number;
 }
