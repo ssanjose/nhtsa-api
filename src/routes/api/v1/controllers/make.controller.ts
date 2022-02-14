@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { getMakes } from "../services/make.service";
 
-
 export const getMakesHandler = async (req: Request, res: Response) => {
     try {
         return await getMakes(req, res);

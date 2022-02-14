@@ -4,9 +4,12 @@ import { Make } from "../models/make.model";
 
 export const getMakes = async (req: Request, res: Response) => {
     try {
-        const makes: Make[] = await axios.get('https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json')
-            .then(response => { return response.data.Results.map((make: Make) => { return make.Make_Name }) });
-        res.status(200).json({ makes });
+        const response = await axios.get('https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json');
+        // const response = await fetch('https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json')
+        // const result = await response.json();
+
+        const makes: Make[] = response.data.Results.map((make: Make) => { return make.Make_Name });
+        res.json({ makes: makes });
     }
     catch (error: any) {
         res.status(500).json({
