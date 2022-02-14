@@ -9,9 +9,12 @@ describe('VIN Test', () => {
     describe('Get single model', () => {
         it('given a VIN', (done) => {
             // Sample vin
-            const VIN = '3N1AB6AP7BL729215';
-            // Actual model
-            const details: string[][] = [['modelYear', '2011'], ['make', 'NISSAN'], ['model', 'Sentra']]
+            const VIN = '1HGCP3F82CA009869';
+            // Actual model from vin
+            const details: string[][] = [
+                ['modelYear', '2012'],
+                ['make', 'HONDA'],
+                ['model', 'Accord']]
 
             chai.request(server)
                 .get(`/api/v1/model?vin=${VIN}`)
