@@ -6,8 +6,9 @@ This API uses TypeScript and an Express Server to deliver its contents. The serv
 
 The API follows the Model-Service-Controller pattern and the routing is set on routes.ts for the api. The tests can be found on the each directory inside test folder.
 
-See the API at 
-Or download and use this application at `git clone https://github.com/ssanjose/nhtsa-api.git`
+See the API at https://nhtsa-api-assessment-312309210.herokuapp.com/
+
+Or download and use this application using `git clone https://github.com/ssanjose/nhtsa-api.git`
 
 ## API
 
