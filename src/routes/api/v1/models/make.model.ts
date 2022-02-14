@@ -1,3 +1,4 @@
 export interface Make {
-    name: string;
+    Make_ID?: number;
+    Make_Name: string;
 }
