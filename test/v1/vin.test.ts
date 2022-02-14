@@ -12,7 +12,7 @@ describe('VIN Test', () => {
             const details: string[][] = [['Model_Year', '2011'], ['Make_Name', 'Nissan'], ['Model_Name', 'Sentra']]
 
             chai.request(server)
-                .get(`/api/v1/model?VIN=${VIN}`)
+                .get(`/api/v1/model?vin=${VIN}`)
                 .end((err: Error, res) => {
                     res.should.have.status(200);
 
