@@ -10,7 +10,7 @@ export const app = express();
 //  ----------------    MIDDLEWARE
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 app.use(cors({
-  origin: ["https://vpic.nhtsa.dot.gov", "http://localhost:3000", "http://localhost:3001", "https://nhtsa-web.herokuapp.com/", "*"],
+  origin: ["https://vpic.nhtsa.dot.gov", "http://localhost:3000", "http://localhost:3001", "https://nhtsa-web.herokuapp.com", "*"],
   methods: ["GET"],
   allowedHeaders: ["Content-Type", "Origin", "X-Requested-With", "Accept"],
 }));
