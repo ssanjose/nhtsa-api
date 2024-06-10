@@ -28,7 +28,7 @@
     "@types/morgan": "^1.9.3",
     "@types/node": "^17.0.17",
     "chai": "^4.3.6",
-    "chai-http": "^4.3.0",
+    "chai-http": "^5.0.0",
     "cross-env": "^7.0.3",
     "mocha": "^10.4.0",
     "nodemon": "^3.1.0",
